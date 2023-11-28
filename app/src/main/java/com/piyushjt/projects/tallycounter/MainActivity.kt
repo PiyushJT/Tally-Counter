@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
+import androidx.appcompat.app.AlertDialog
 import com.piyushjt.projects.tallycounter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -35,8 +36,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun reset(){
-        val noText= binding.count
-        noText.text = "0"
+        val alertBox= AlertDialog.Builder(this)
+        alertBox.setTitle("Confirm reset?")
+        alertBox.setMessage("This will reset your counting")
+        alertBox.setPositiveButton("Yes") { _,_ ->
+            val noText= binding.count
+            noText.text = "0"
+        }
+        alertBox.setNegativeButton("No"){dialog, _ ->
+            dialog.cancel()
+        }
+        alertBox.create().show()
+
     }
 
     fun vibe(){
