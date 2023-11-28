@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.reset.setOnClickListener {
             reset()
-            vibe()
+            vibeLong()
         }
 
     }
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     fun vibeLong(){
         val vibrate= getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        vibrate.vibrate(VibrationEffect.createOneShot(75, VibrationEffect.DEFAULT_AMPLITUDE))
+        vibrate.vibrate(VibrationEffect.createOneShot(95, VibrationEffect.DEFAULT_AMPLITUDE))
     }
 
 }
