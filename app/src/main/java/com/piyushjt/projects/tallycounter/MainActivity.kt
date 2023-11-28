@@ -30,12 +30,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun count(): String{
+    private fun count(): String{
         val noText= binding.count.text.toString().toInt()
         return "${noText+1}"
     }
 
-    fun reset(){
+    private fun reset(){
         val alertBox= AlertDialog.Builder(this)
         alertBox.setTitle("Confirm reset?")
         alertBox.setMessage("This will reset your counting")
@@ -50,12 +50,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun vibe(){
+    private fun vibe(){
         val vibrate= getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibrate.vibrate(VibrationEffect.createOneShot(55, VibrationEffect.DEFAULT_AMPLITUDE))
     }
 
-    fun vibeLong(){
+    private fun vibeLong(){
         val vibrate= getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibrate.vibrate(VibrationEffect.createOneShot(95, VibrationEffect.DEFAULT_AMPLITUDE))
     }
